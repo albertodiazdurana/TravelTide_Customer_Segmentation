@@ -1,0 +1,17 @@
+Metric,Value
+Total Sessions,43344
+Total Users,5765
+Sessions per User (mean),7.52
+Sessions per User (median),8
+Flight Bookings,11186
+Hotel Bookings,11287
+Cancellations,114
+Cancellation Rate,0.26%
+Flight Booking Rate,25.81%
+Hotel Booking Rate,26.04%
+Age Range (min),18
+Age Range (max),88
+Date Range (start),2023-01-04 00:01:00
+Date Range (end),2023-07-24 19:50:56
+Outliers Removed (sessions),3956
+Outliers Removed (%),8.36%
