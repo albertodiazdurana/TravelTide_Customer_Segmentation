@@ -11,7 +11,7 @@
 ### Q1: Why did we define a specific cohort instead of using all users?
 
 **Answer:**
-We defined a specific cohort to focus on **engaged, convertible customers** who are worth investing in through a rewards program. Including all users would bias our analysis because:
+I defined a specific cohort to focus on **engaged, convertible customers** who are worth investing in through a rewards program. Including all users would bias my analysis because:
 
 - **New users** (signed up recently) lack behavioral patterns for meaningful segmentation
 - **One-time browsers** never converted and may never return
@@ -31,10 +31,10 @@ The cohort represents users with sufficient behavioral data to enable accurate p
 2. **Activity Filter:** Users with >7 sessions (established engagement)
 3. **Age Validation:** 18-100 years old (legal compliance, remove anomalies)
 
-We added a fourth filter:
+I added a fourth filter:
 4. **Outlier Removal:** IQR method with 3.0x multiplier (data quality)
 
-These criteria ensure we're analyzing customers with recent, meaningful engagement patterns.
+These criteria ensure I'm analyzing customers with recent, meaningful engagement patterns.
 
 ---
 
@@ -45,7 +45,7 @@ These criteria ensure we're analyzing customers with recent, meaningful engageme
 - **43,344 sessions**
 - **7.52 sessions per user (average)**
 
-This represents our qualified analytical cohort for the rewards program segmentation.
+This represents my qualified analytical cohort for the rewards program segmentation.
 
 ---
 
@@ -54,9 +54,9 @@ This represents our qualified analytical cohort for the rewards program segmenta
 ### Q4: How did you handle the 2006 birth year anomaly?
 
 **Answer:**
-We investigated the anomaly and found a spike in users born in 2006 (age 17 in 2023). Rather than assume it was an error, we applied Elena's age validation filter (18-100 years old), which naturally excluded these users since they're below the legal minimum age for the rewards program.
+I investigated the anomaly and found a spike in users born in 2006 (age 17 in 2023). Rather than assume it was an error, I applied Elena's age validation filter (18-100 years old), which naturally excluded these users since they're below the legal minimum age for the rewards program.
 
-The visualization clearly showed this anomaly, and our age filter addressed it systematically rather than through arbitrary data manipulation.
+The visualization clearly showed this anomaly, and my age filter addressed it systematically rather than through arbitrary data manipulation.
 
 ---
 
@@ -73,14 +73,14 @@ The **IQR (Inter-Quartile Range) method** is superior for travel data because:
 **Why not Z-scores?** Assumes normal distribution (travel data is heavily skewed)  
 **Why not percentile cutoffs?** Too arbitrary; loses potentially valid data
 
-Our approach removed only 8.36% of sessions - aggressive enough to improve quality, conservative enough to preserve real behavior.
+My approach removed only 8.36% of sessions - aggressive enough to improve quality, conservative enough to preserve real behavior.
 
 ---
 
 ### Q6: How did you resolve invalid hotel nights?
 
 **Answer:**
-We handled this **proactively in the SQL extraction query** using CASE logic:
+I handled this **proactively in the SQL extraction query** using CASE logic:
 
 ```sql
 CASE 
@@ -94,14 +94,14 @@ This means:
 - Invalid values (≤0) are set to NULL
 - Bad data never enters the analysis pipeline
 
-**Result:** 0 invalid hotel nights detected in the final dataset, confirming our query logic worked correctly.
+**Result:** 0 invalid hotel nights detected in the final dataset, confirming my query logic worked correctly.
 
 ---
 
 ### Q7: What outlier categories did you check?
 
 **Answer:**
-We checked three categories:
+I checked three categories:
 
 1. **Behavioral Metrics:** page_clicks
 2. **Monetary Metrics:** base_fare_usd, hotel_price_per_room_night_usd, flight_discount_amount, hotel_discount_amount
@@ -115,15 +115,15 @@ Each metric was evaluated independently using the IQR method, and sessions with 
 
 **Answer:**
 
-| Stage | Sessions | Users | % Lost (Sessions) |
-|-------|----------|-------|-------------------|
-| All Sessions (database) | ~varies | ~varies | - |
-| After Date Filter (>2023-01-04) | ~varies | ~varies | - |
-| After Activity Filter (>7 sessions) | 47,300 | 5,765 | - |
-| After Age Filter (18-100 years) | 47,300 | 5,765 | 0% |
-| After Outlier Removal | 43,344 | 5,765 | 8.36% |
+| Stage                               | Sessions | Users   | % Lost (Sessions) |
+| ----------------------------------- | -------- | ------- | ----------------- |
+| All Sessions (database)             | ~varies  | ~varies | -                 |
+| After Date Filter (>2023-01-04)     | ~varies  | ~varies | -                 |
+| After Activity Filter (>7 sessions) | 47,300   | 5,765   | -                 |
+| After Age Filter (18-100 years)     | 47,300   | 5,765   | 0%                |
+| After Outlier Removal               | 43,344   | 5,765   | 8.36%             |
 
-**Key insight:** We maintained all 5,765 users while removing only extreme session outliers. This preserves our user base while improving data quality.
+**Key insight:** I maintained all 5,765 users while removing only extreme session outliers. This preserves my user base while improving data quality.
 
 ---
 
@@ -132,9 +132,9 @@ Each metric was evaluated independently using the IQR method, and sessions with 
 ### Q9: What does "7.52 sessions per user" tell us?
 
 **Answer:**
-This metric indicates **moderate to high engagement** within our cohort:
+This metric indicates **moderate to high engagement** within my cohort:
 
-- Users in our cohort have browsed/interacted with the platform multiple times
+- Users in my cohort have browsed/interacted with the platform multiple times
 - They're not one-time visitors (which would show ~1 session per user)
 - They're engaged enough to have established behavioral patterns for segmentation
 - This validates Elena's >7 sessions filter as appropriate for identifying committed customers
@@ -173,7 +173,7 @@ This range:
 ### Q12: How confident are you in the data quality after this notebook?
 
 **Answer:**
-**Very confident.** We addressed all major data quality issues:
+**Very confident.** I addressed all major data quality issues:
 
 1. **Age anomalies:** Investigated and filtered systematically
 2. **Invalid hotel nights:** Prevented at extraction (0 invalid values)
@@ -189,13 +189,13 @@ The cleaned dataset is ready for feature engineering and segmentation with minim
 **Answer:**
 **Browsing behavior is valuable for segmentation.**
 
-Sessions without bookings tell us:
+Sessions without bookings tell me:
 - User interest and research patterns
 - Price sensitivity (if they browsed but didn't book)
 - Engagement level (page clicks, session duration)
 - Discount response behavior
 
-These non-converting sessions help identify different customer types:
+These non-converting sessions help me identify different customer types:
 - **Window shoppers:** High engagement, low conversion
 - **Price-sensitive researchers:** Many sessions before booking
 - **Impulse bookers:** Few sessions, quick conversion
@@ -249,7 +249,7 @@ Will analyze:
 - **Engagement Patterns:** Session frequency, page clicks, conversion timing
 - **Initial Insights:** Identify opportunities for segmentation
 
-This deeper analysis will inform our feature engineering strategy in Week 2.
+This deeper analysis will inform my feature engineering strategy in Week 2.
 
 ---
 
@@ -263,7 +263,7 @@ This deeper analysis will inform our feature engineering strategy in Week 2.
 3. Data quality is validated and documented
 4. User count (5,765) is sufficient for robust clustering
 
-**However,** if business requirements change (e.g., Elena wants to include newer users or adjust activity thresholds), we can easily re-run the notebook with updated filters. The modular design supports this flexibility.
+**However,** if business requirements change (e.g., Elena wants to include newer users or adjust activity thresholds), I can easily re-run the notebook with updated filters. The modular design supports this flexibility.
 
 ---
 
@@ -272,16 +272,16 @@ This deeper analysis will inform our feature engineering strategy in Week 2.
 ### Q18: "Why did you remove 8% of the data? Aren't we losing valuable customers?"
 
 **Answer:**
-**We removed outlier sessions, not users.** All 5,765 users remain in the analysis.
+**I removed outlier sessions, not users.** All 5,765 users remain in the analysis.
 
-The 8.36% of sessions we removed were extreme outliers (e.g., 500+ page clicks in one session, $50,000 flight fares) that would:
+The 8.36% of sessions I removed were extreme outliers (e.g., 500+ page clicks in one session, $50,000 flight fares) that would:
 - Distort clustering algorithms
 - Pull cluster centers toward unrealistic values
 - Mask patterns in the 91.64% of normal customer behavior
 
 **Analogy:** If analyzing typical grocery shopping, you wouldn't let a single $10,000 purchase distort your understanding of normal buying patterns. These outliers represent edge cases, not target customers.
 
-We preserved their other sessions, so their typical behavior is still represented.
+I preserved their other sessions, so their typical behavior is still represented.
 
 ---
 
@@ -318,7 +318,7 @@ Each filter serves a specific business or data quality purpose.
 - 0.26% cancellation rate (satisfied customers)
 - Balanced flight/hotel bookings (diverse travel needs)
 
-This is not a random sample - it's a **strategic subset** of your most valuable, targetable customers.
+This is not a random sample - it's a **strategic subset** of the most valuable, targetable customers.
 
 ---
 
@@ -327,7 +327,7 @@ This is not a random sample - it's a **strategic subset** of your most valuable,
 ### Q21: "Could we have used machine learning for outlier detection instead?"
 
 **Answer:**
-**We could, but it's overkill for this stage:**
+**I could have, but it's overkill for this stage:**
 
 **Advantages of IQR method:**
 - Simple, interpretable, stakeholder-friendly
@@ -337,13 +337,13 @@ This is not a random sample - it's a **strategic subset** of your most valuable,
 - Fast execution
 - Works with any distribution
 
-**If we used ML (e.g., Isolation Forest, LOF):**
+**If I used ML (e.g., Isolation Forest, LOF):**
 - More complex to explain to non-technical stakeholders
 - Requires hyperparameter selection
 - Less interpretable ("the algorithm flagged it" vs. "it's 3x beyond the normal range")
 - Results may vary with random seeds
 
-**IQR is appropriate** for this use case. We reserve ML complexity for the actual segmentation task.
+**IQR is appropriate** for this use case. I reserve ML complexity for the actual segmentation task.
 
 ---
 
@@ -358,7 +358,7 @@ This is not a random sample - it's a **strategic subset** of your most valuable,
 4. **Distributed computing:** Use Spark/Dask for parallel processing
 5. **Incremental processing:** Process only new data, not full historical
 
-**Current approach is appropriate** for 5,765 users. If scale increases significantly, we'd refactor for efficiency while maintaining the same analytical logic.
+**My current approach is appropriate** for 5,765 users. If scale increases significantly, I'd refactor for efficiency while maintaining the same analytical logic.
 
 ---
 
@@ -373,9 +373,9 @@ This is not a random sample - it's a **strategic subset** of your most valuable,
 **Why this matters:**
 - Not every session results in a booking (browsing behavior is valuable)
 - Users might book flights only, or hotels only, or neither
-- We want to understand all engagement patterns, not just completed bookings
+- I want to understand all engagement patterns, not just completed bookings
 
-This decision allows us to segment users based on browsing behavior, conversion patterns, and booking preferences.
+This decision allows me to segment users based on browsing behavior, conversion patterns, and booking preferences.
 
 ---
 
@@ -384,14 +384,14 @@ This decision allows us to segment users based on browsing behavior, conversion 
 ### Q24: "What's the most important takeaway from this notebook?"
 
 **Answer:**
-**We established a clean, validated analytical foundation.**
+**I established a clean, validated analytical foundation.**
 
 - **5,765 qualified users** with meaningful engagement patterns
 - **High data quality** after systematic outlier removal
 - **Documented methodology** that's reproducible and defensible
 - **Ready for analysis** - no more data cleaning surprises
 
-This foundation ensures that downstream analysis (feature engineering, clustering, perk assignment) will be based on reliable data. **Garbage in, garbage out** - we've ensured we're starting with quality inputs.
+This foundation ensures that downstream analysis (feature engineering, clustering, perk assignment) will be based on reliable data. **Garbage in, garbage out** - I've ensured I'm starting with quality inputs.
 
 ---
 
@@ -404,10 +404,10 @@ This foundation ensures that downstream analysis (feature engineering, clusterin
 - Shows the entire filtering process visually
 - Demonstrates transparency in methodology
 - Easy for stakeholders to understand
-- Shows we're not arbitrarily removing data
+- Shows I'm not arbitrarily removing data
 - Displays final cohort size prominently
 
-This single chart tells the complete story of how we arrived at our analytical cohort.
+This single chart tells the complete story of how I arrived at my analytical cohort.
 
 ---
 
@@ -415,16 +415,10 @@ This single chart tells the complete story of how we arrived at our analytical c
 
 ### Three Sentences to Explain This Notebook:
 
-1. **"We defined a cohort of 5,765 engaged users who meet Elena's criteria for the rewards program target audience."**
+1. **"I defined a cohort of 5,765 engaged users who meet Elena's criteria for the rewards program target audience."**
 
-2. **"We systematically addressed data quality issues using industry-standard methods, removing 8% of outlier sessions while preserving all users."**
+2. **"I systematically addressed data quality issues using industry-standard methods, removing 8% of outlier sessions while preserving all users."**
 
 3. **"The result is a clean, validated dataset of 43,344 sessions with strong engagement metrics, ready for behavioral analysis and segmentation."**
 
 ---
-
-**End of Q&A Document**
-
-**Confidence Level:** HIGH - All decisions are data-driven, business-aligned, and methodologically sound.
-
-**Preparation Tip:** Practice explaining the cohort funnel and IQR method in non-technical terms. These are the two concepts most likely to need clarification for stakeholders.
