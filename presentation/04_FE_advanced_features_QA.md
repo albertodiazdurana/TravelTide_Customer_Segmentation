@@ -46,7 +46,7 @@ Perk propensity scores predict how much each customer would **value each of the 
 - Maximizes customer satisfaction and ROI
 
 **Analogy for Elena:**
-Think of propensity scores like a "compatibility score" in dating apps. We measure how compatible each customer is with each perk, then match them to their best fit.
+Think of propensity scores like a "compatibility score" in job searching apps. We measure how compatible each customer is with each perk, then match them to their best fit.
 
 ---
 
