@@ -7,7 +7,7 @@
 
 **Author:** Alberto Diaz Durana  
 **Date:** October 2025  
-**Course:** Data Analytics Program - Week 4 Final Project
+**Course:** Unsupervised Learning - 4 Week Project
 
 ---
 
@@ -26,23 +26,23 @@ TravelTide seeks to launch a personalized rewards program by assigning 5,765 act
 
 ### Three Clear Customer Segments
 
-| **Cluster** | **Persona** | **Size** | **Avg CLV** | **Total CLV** | **Key Characteristics** |
-|-------------|-------------|----------|-------------|---------------|-------------------------|
-| **0** | Premium Paula | 4,596 (79.7%) | $4,985 | $22.9M (98%) | High-value hotel travelers, premium spending, strong loyalty |
-| **1** | Dining David | 287 (5.0%) | $768 | $220K (1%) | Mid-value travelers, dining-focused, experiential preferences |
-| **2** | Flexible Fiona | 882 (15.3%) | $319 | $281K (<1%) | Budget-conscious, flexibility-focused, occasional travelers |
+| **Cluster** | **Persona**    | **Size**      | **Avg CLV** | **Total CLV** | **Key Characteristics**                                       |
+| ----------- | -------------- | ------------- | ----------- | ------------- | ------------------------------------------------------------- |
+| **0**       | Premium Paula  | 4,596 (79.7%) | $4,985      | $22.9M (98%)  | High-value hotel travelers, premium spending, strong loyalty  |
+| **1**       | Dining David   | 287 (5.0%)    | $768        | $220K (1%)    | Mid-value travelers, dining-focused, experiential preferences |
+| **2**       | Flexible Fiona | 882 (15.3%)   | $319        | $281K (<1%)   | Budget-conscious, flexibility-focused, occasional travelers   |
 
 ### Balanced Perk Distribution
 
 Despite 79.7% cluster concentration, individual propensities create balanced perk allocation:
 
-| **Perk** | **Users Assigned** | **Percentage** |
-|----------|-------------------|----------------|
-| Free Checked Bag | 1,402 | 24.3% |
-| Free Hotel Meal | 1,349 | 23.4% |
-| One Night Free Hotel | 1,277 | 22.2% |
-| Exclusive Discounts | 944 | 16.4% |
-| No Cancellation Fee | 793 | 13.8% |
+| **Perk**             | **Users Assigned** | **Percentage** |
+| -------------------- | ------------------ | -------------- |
+| Free Checked Bag     | 1,402              | 24.3%          |
+| Free Hotel Meal      | 1,349              | 23.4%          |
+| One Night Free Hotel | 1,277              | 22.2%          |
+| Exclusive Discounts  | 944                | 16.4%          |
+| No Cancellation Fee  | 793                | 13.8%          |
 
 **CRITICAL INSIGHT:** All 5 perks viable for marketing. Individual preferences within segments are more diverse than cluster averages suggested.
 
@@ -55,6 +55,13 @@ Despite 79.7% cluster concentration, individual propensities create balanced per
 ---
 
 ## 🚀 Methodology Overview
+
+### Development Process
+
+This analysis was initially developed across 15 daily notebooks (Week 1-3: 5 notebooks each) 
+and consolidated into 6 production-ready notebooks for final delivery. Consolidation 
+improved code quality, eliminated redundancy, and enhanced reproducibility while 
+maintaining complete analytical rigor.
 
 ### Six-Notebook Analytical Workflow
 
@@ -316,31 +323,31 @@ Propensity scoring captures this within-cluster diversity that simple cluster-to
 
 ### User Perk Assignments (`user_perk_assignments.csv`)
 
-| Column | Type | Description |
-|--------|------|-------------|
-| `user_id` | int | Unique user identifier |
-| `cluster` | int | Assigned cluster (0, 1, 2) |
-| `assigned_perk` | str | Optimal perk for user |
-| `perk_propensity` | float | Propensity score for assigned perk [0-1] |
-| `second_perk` | str | Runner-up perk |
-| `second_propensity` | float | Propensity for second choice [0-1] |
-| `confidence_delta` | float | Top - Second propensity |
-| `confidence_level` | str | HIGH/MEDIUM/LOW based on delta |
+| Column              | Type  | Description                              |
+| ------------------- | ----- | ---------------------------------------- |
+| `user_id`           | int   | Unique user identifier                   |
+| `cluster`           | int   | Assigned cluster (0, 1, 2)               |
+| `assigned_perk`     | str   | Optimal perk for user                    |
+| `perk_propensity`   | float | Propensity score for assigned perk [0-1] |
+| `second_perk`       | str   | Runner-up perk                           |
+| `second_propensity` | float | Propensity for second choice [0-1]       |
+| `confidence_delta`  | float | Top - Second propensity                  |
+| `confidence_level`  | str   | HIGH/MEDIUM/LOW based on delta           |
 
 ### Cluster Profiles (`cluster_profiles_k3.csv`)
 
-| Column | Type | Description |
-|--------|------|-------------|
-| `cluster_id` | int | Cluster identifier (0, 1, 2) |
-| `size` | int | Number of users in cluster |
-| `pct_of_total` | float | Percentage of total cohort |
-| `age_mean` | float | Average age in years |
-| `years_active_mean` | float | Average tenure on platform |
-| `avg_bookings` | float | Mean bookings per user |
-| `avg_sessions` | float | Mean sessions per user |
-| `avg_clv` | float | Average Customer Lifetime Value |
-| `total_clv` | float | Total CLV for segment |
-| `dominant_perk` | str | Most common perk in cluster |
+| Column              | Type  | Description                     |
+| ------------------- | ----- | ------------------------------- |
+| `cluster_id`        | int   | Cluster identifier (0, 1, 2)    |
+| `size`              | int   | Number of users in cluster      |
+| `pct_of_total`      | float | Percentage of total cohort      |
+| `age_mean`          | float | Average age in years            |
+| `years_active_mean` | float | Average tenure on platform      |
+| `avg_bookings`      | float | Mean bookings per user          |
+| `avg_sessions`      | float | Mean sessions per user          |
+| `avg_clv`           | float | Average Customer Lifetime Value |
+| `total_clv`         | float | Total CLV for segment           |
+| `dominant_perk`     | str   | Most common perk in cluster     |
 
 ---
 
@@ -426,25 +433,11 @@ Propensity scoring captures this within-cluster diversity that simple cluster-to
 ## 👤 Author
 
 **Alberto Diaz Durana**  
-Data Analyst | Customer Segmentation Specialist
+Data Scientist | Customer Segmentation Specialist
 
 - GitHub: [@albertodiazdurana](https://github.com/albertodiazdurana)
 - LinkedIn: [Alberto Diaz Durana](https://linkedin.com/in/albertodiazdurana)
-- Email: [your-email]
 
----
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- **TravelTide**: For providing the business context and dataset
-- **Data Analytics Program**: For guidance on clustering methodologies
-- **Stakeholder Elena**: For clear project objectives and feedback
 
 ---
 
@@ -452,8 +445,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For questions about methodology, implementation, or data access:
 - Open an issue in this repository
-- Email: [your-email]
-- Schedule consultation: [calendly-link]
+- Email: [adiazdurana@gmail.com]
 
 ---
 
