@@ -211,19 +211,29 @@ TravelTide_Customer_Segmentation/
 │   └── 06_CLUSTERING_segmentation_assignment.ipynb
 │
 ├── data/
-│   ├── raw/                            # Original datasets
+│   ├── raw/                            # Original datasets: extracted from the endpoint
 │   ├── processed/                      # Cleaned and engineered features
 │   │   ├── user_features_raw.csv
+│   │   ├──user_base_complete.csv
 │   │   └── user_features_engineered.csv
 │   └── results/
 │       ├── eda/                        # EDA outputs
+│           ├── eda_cohort_qualified.csv
+│           ├── eda_data_quality_report.csv
+│           └── eda_summary_stats.csv
 │       ├── feature_engineering/        # Feature dictionaries
-│       │   └── feature_dictionary.csv
+│       │   ├── feature_dictionary.csv
+│       │   └── feature_dictionary_week2.csv
 │       └── clustering/                 # Final clustering outputs
 │           ├── user_perk_assignments.csv     # 5,765 × 8 (PRIMARY DELIVERABLE)
 │           ├── cluster_profiles_k3.csv       # 3 × 10
 │           ├── cluster_assignments_k3.csv    # 5,765 × 2
-│           └── perk_distribution.csv         # 5 × 3
+│           ├── perk_distribution.csv         # 5 × 3
+│           ├── clustering_k_selection_metrics.csv
+│           ├── clustering_method_comparison.csv
+│           ├── clustering_pca_loadings.csv
+│           ├── clustering_pca_results.csv
+│           └── user_perk_assignments.csv
 │
 ├── outputs/
 │   └── figures/                        # All visualizations
@@ -233,10 +243,9 @@ TravelTide_Customer_Segmentation/
 │
 ├── docs/
 │   └── reports/                        # Documentation and presentations
-│       ├── executive_summary.md        # 1-page summary for stakeholders
-│       ├── detailed_report.md          # 3-page comprehensive analysis
-│       ├── presentation_personas.md    # Customer persona profiles
-│       └── qa_documents/               # 6 Q&A docs (30 questions each)
+│       ├── executive_summary.pdf       # 1-page summary for stakeholders
+│       ├── detailed_report.pdf         # 3-page comprehensive analysis
+│       └── presentation_personas.pdf   # Customer persona profiles
 │
 ├── README.md                           # This file
 ├── requirements.txt                    # Python dependencies
