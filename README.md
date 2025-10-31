@@ -11,7 +11,7 @@
 
 ---
 
-## 🎯 Project Objectives
+## Project Objectives
 
 TravelTide seeks to launch a personalized rewards program by assigning 5,765 active customers to one of five perks based on behavioral preferences. This project delivers:
 
@@ -22,7 +22,7 @@ TravelTide seeks to launch a personalized rewards program by assigning 5,765 act
 
 ---
 
-## 📊 Key Results
+## Key Results
 
 ### Three Clear Customer Segments
 
@@ -54,7 +54,7 @@ Despite 79.7% cluster concentration, individual propensities create balanced per
 
 ---
 
-## 🚀 Methodology Overview
+## Methodology Overview
 
 ### Development Process
 
@@ -114,7 +114,7 @@ The analysis follows a systematic, stage-gated approach ensuring data quality an
 
 ---
 
-## 👥 Customer Personas
+## Customer Personas
 
 ### Persona 1: Premium Paula (Cluster 0)
 **Profile:** Frequent business/leisure traveler, values quality hotel experiences, represents TravelTide's core high-value base
@@ -173,31 +173,19 @@ The analysis follows a systematic, stage-gated approach ensuring data quality an
 
 ---
 
-## 📈 Visualizations
+## Visualizations
 
-### K-Selection Validation
-![K-Selection Dashboard](outputs/figures/clustering/clustering_k_selection_dashboard.png)
-*Four-metric validation showing K=3 optimal across Silhouette, Davies-Bouldin, Calinski-Harabasz, and Elbow analyses*
+All visualizations are generated within the notebooks and saved to `outputs/figures/`. Key visualizations include:
 
-### Method Comparison
-![Method Comparison](outputs/figures/clustering/clustering_method_comparison.png)
-*Hierarchical clustering outperforms K-Means at K=3 across all validation metrics*
-
-### PCA Analysis
-![PCA 2D Projection](outputs/figures/clustering/clustering_pca_2d_plot.png)
-*56.4% variance explained in first 2 components, clear natural segmentation visible*
-
-### Perk Propensities
-![Perk Propensities](outputs/figures/feature_engineering/fe_perk_propensities.png)
-*Distribution of perk propensity scores showing diverse preferences across cohort*
-
-### Final Segmentation
-![Segmentation Dashboard](outputs/figures/clustering/clustering_segmentation_dashboard.png)
-*Complete results: cluster sizes, perk distribution, profile comparison, confidence levels*
+- **K-Selection Dashboard:** Four-metric validation showing K=3 optimal
+- **Method Comparison:** Hierarchical vs K-Means performance across metrics
+- **PCA Analysis:** 2D projection showing natural segmentation (56.4% variance explained)
+- **Perk Propensities:** Distribution of propensity scores across cohort
+- **Segmentation Dashboard:** Complete results with cluster sizes, perk distribution, and confidence levels
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 TravelTide_Customer_Segmentation/
@@ -211,16 +199,16 @@ TravelTide_Customer_Segmentation/
 │   └── 06_CLUSTERING_segmentation_assignment.ipynb
 │
 ├── data/
-│   ├── raw/                            # Original datasets: extracted from the endpoint
+│   ├── raw/                            # Original datasets (query database directly)
 │   ├── processed/                      # Cleaned and engineered features
 │   │   ├── user_features_raw.csv
-│   │   ├──user_base_complete.csv
+│   │   ├── user_base_complete.csv
 │   │   └── user_features_engineered.csv
 │   └── results/
 │       ├── eda/                        # EDA outputs
-│           ├── eda_cohort_qualified.csv
-│           ├── eda_data_quality_report.csv
-│           └── eda_summary_stats.csv
+│       │   ├── eda_cohort_qualified.csv
+│       │   ├── eda_data_quality_report.csv
+│       │   └── eda_summary_stats.csv
 │       ├── feature_engineering/        # Feature dictionaries
 │       │   ├── feature_dictionary.csv
 │       │   └── feature_dictionary_week2.csv
@@ -232,8 +220,7 @@ TravelTide_Customer_Segmentation/
 │           ├── clustering_k_selection_metrics.csv
 │           ├── clustering_method_comparison.csv
 │           ├── clustering_pca_loadings.csv
-│           ├── clustering_pca_results.csv
-│           └── user_perk_assignments.csv
+│           └── clustering_pca_results.csv
 │
 ├── outputs/
 │   └── figures/                        # All visualizations
@@ -255,13 +242,13 @@ TravelTide_Customer_Segmentation/
 
 ---
 
-## 🔧 Technical Implementation
+## Technical Implementation
 
 ### Environment Setup
 
 ```bash
 # Clone repository
-git clone https://github.com/albertodiazdurana/TravelTide_Customer_Segmentation.git
+git clone https://github.com/[YOUR-USERNAME]/TravelTide_Customer_Segmentation.git
 cd TravelTide_Customer_Segmentation
 
 # Create virtual environment
@@ -275,12 +262,13 @@ pip install -r requirements.txt
 ### Requirements
 
 ```
-pandas>=1.5.0
-numpy>=1.23.0
-scikit-learn>=1.2.0
-matplotlib>=3.6.0
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
 seaborn>=0.12.0
-scipy>=1.9.0
+scipy>=1.11.0
+sqlalchemy>=2.0.0
 jupyter>=1.0.0
 ```
 
@@ -297,7 +285,7 @@ jupyter notebook notebooks/01_EDA_data_quality_cohort.ipynb
 
 ---
 
-## 💡 Key Technical Decisions
+## Key Technical Decisions
 
 ### Why K=3 Instead of K=5?
 
@@ -328,7 +316,7 @@ Propensity scoring captures this within-cluster diversity that simple cluster-to
 
 ---
 
-## 📊 Data Dictionary
+## Data Dictionary
 
 ### User Perk Assignments (`user_perk_assignments.csv`)
 
@@ -360,7 +348,7 @@ Propensity scoring captures this within-cluster diversity that simple cluster-to
 
 ---
 
-## 🎓 Analytical Rigor
+## Analytical Rigor
 
 ### Validation Approach
 
@@ -381,7 +369,7 @@ Propensity scoring captures this within-cluster diversity that simple cluster-to
 
 ---
 
-## 📈 Business Impact
+## Business Impact
 
 ### Revenue Protection
 - Premium Paula segment: $22.9M CLV (98% of total)
@@ -400,7 +388,7 @@ Propensity scoring captures this within-cluster diversity that simple cluster-to
 
 ---
 
-## 📄 Deliverables
+## Deliverables
 
 ### For Marketing Team
 - **Executive Summary** (1 page): High-level findings and recommendations
@@ -420,7 +408,7 @@ Propensity scoring captures this within-cluster diversity that simple cluster-to
 
 ---
 
-## 🏆 Project Highlights
+## Project Highlights
 
 **Analytical Rigor**
 - Multi-metric validation of clustering approach
@@ -439,29 +427,27 @@ Propensity scoring captures this within-cluster diversity that simple cluster-to
 
 ---
 
-## 👤 Author
+## Author
 
 **Alberto Diaz Durana**  
-Data Scientist | Customer Segmentation Specialist
+Data Scientist
 
 - GitHub: [@albertodiazdurana](https://github.com/albertodiazdurana)
-- LinkedIn: [Alberto Diaz Durana](https://linkedin.com/in/albertodiazdurana)
-
+- LinkedIn: [albertodiazdurana](https://linkedin.com/in/albertodiazdurana)
 
 ---
 
-## 📞 Contact
+## Contact
 
 For questions about methodology, implementation, or data access:
 - Open an issue in this repository
-- Email: [adiazdurana@gmail.com]
+- Reachout in LinkedIn
 
 ---
 
 **Last Updated:** October 30, 2025  
-**Project Status:** Complete - Ready for Implementation  
-**Version:** 1.0.0
+**Project Status:** Complete - Ready for Implementation
 
 ---
 
-⭐ **Star this repository if you found it helpful!**
+*Star this repository if you found it helpful!*
