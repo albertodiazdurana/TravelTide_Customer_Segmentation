@@ -10,6 +10,8 @@
 **Course:** Unsupervised Learning - 4 Week Project
 
 ---
+**Exdcutive Report:**  
+---
 
 ## Project Objectives
 
@@ -24,7 +26,10 @@ TravelTide seeks to launch a personalized rewards program by assigning 5,765 act
 
 ## Key Results
 
-### Three Clear Customer Segments
+# ![Behavioral_Segments](../TravelTide_Customer_Segmentation/presentation/Behavioral_Segments.png)
+
+
+### Three Clear Behavioural Segments
 
 | **Cluster** | **Persona**    | **Size**      | **Avg CLV** | **Total CLV** | **Key Characteristics**                                       |
 | ----------- | -------------- | ------------- | ----------- | ------------- | ------------------------------------------------------------- |
