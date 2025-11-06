@@ -26,7 +26,7 @@ TravelTide seeks to launch a personalized rewards program by assigning 5,765 act
 
 ## Key Results
 
-# ![Behavioral_Segments](../TravelTide_Customer_Segmentation/presentation/Behavioral_Segments.png)
+![Behavioral_Segments](../TravelTide_Customer_Segmentation/presentation/Behavioral_Segments.png)
 
 
 ### Three Clear Behavioural Segments
