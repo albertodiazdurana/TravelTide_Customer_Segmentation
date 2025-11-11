@@ -10,7 +10,7 @@
 **Course:** Unsupervised Learning - 4 Week Project
 
 ---
-**Exdcutive Report:**  
+**Executive Report:**  
 ---
 
 ## Project Objectives
